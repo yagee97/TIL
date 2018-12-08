@@ -1,5 +1,5 @@
-## Blockchain Mining
-blockchain의 mining에 대해서 다룹니다.
+## Blockchain Mining & Difficulty adjustment
+blockchain의 mining과 difficulty adjustment 에 대해서 다룹니다.
 
 <br>
 
@@ -36,11 +36,11 @@ blockchain의 mining에 대해서 다룹니다.
 <br>
 
 #### 2주마다 block의 개수를 체크하는 데, 
-+ 2016개의 block을 만드는 시간이 20160 min 보다 적게 걸렸다면, nBits를 늘려야한다. 
-=> 난이도가 쉬워 더 많은 block을 만들었다는 것이기 때문.
+    + 2016개의 block을 만드는 시간이 20160 min 보다 적게 걸렸다면, nBits를 늘려야한다. 
+    => 난이도가 쉬워 더 많은 block을 만들었다는 것이기 때문.
 
-+ 2016개의 block을 만드는 시간이 20160 min 보다 더 오래걸렸다면, nBits를 줄여야한다.
-=> 난이도가 어려워 더 적은 block을 만들었다는 것이기 때문.
+    + 2016개의 block을 만드는 시간이 20160 min 보다 더 오래걸렸다면, nBits를 줄여야한다.
+    => 난이도가 어려워 더 적은 block을 만들었다는 것이기 때문.
 
 <br>
 
@@ -63,15 +63,15 @@ blockchain의 mining에 대해서 다룹니다.
 ![mining](https://user-images.githubusercontent.com/19389288/49686040-f9570880-fb31-11e8-9566-d75ba8ef00ae.PNG)
 
 ##### 첫번째 byte는 0이 아닌 byte의 수다. (Bits to compare)
-###### 23(decimal of 17)(byte) x 8 = 184 (bits)
-###### 2A4E2F: 001010100100111000101111 (binary)
+    23(decimal of 17)(byte) x 8 = 184 (bits)
+    2A4E2F: 001010100100111000101111 (binary)
 
 ![mining2](https://user-images.githubusercontent.com/19389288/49686044-083dbb00-fb32-11e8-901d-2e8d3ac9d9a5.PNG)
 
 ##### 이 예제에서, 0이여야 하는 bit 수는 `256(전체 bit 수) - 184 (비교를 해야하는 bit 수) = 72bit`이다.
 ##### 하지만, 비교를 해야하는 bit의 수에서 앞의 두자리가 현재 0이기 때문에 `nBits`는 `74`가 된다.
 
-###### hash 값은 byte값이기 때문에, 1byte만 증가해도 8bit가 추가된다. 17이 18이 되거나, 16이 되어버리면,
-###### 8bit 씩 움직여야 하기 때문에 뒤의 남은 bit들을 통해 난이도 조정을 하는 것이다.
+    hash 값은 byte값이기 때문에, 1byte만 증가해도 8bit가 추가된다. 17이 18이 되거나, 16이 되어버리면,
+    8bit 씩 움직여야 하기 때문에 뒤의 남은 bit들을 통해 난이도 조정을 하는 것이다.
 
  
