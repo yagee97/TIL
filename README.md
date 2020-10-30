@@ -9,5 +9,4 @@ Today I Learned!
 > 2. Data Mining
 > 3. Distributed System
 > 4. HCI
-> 5. Vue.js(recent)
-<br>
+> 5. Vue.js
